@@ -1,16 +1,12 @@
 /*
 Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
 jank-free at 60 frames per second.
-
 There are two major issues in this code that lead to sub-60fps performance. Can
 you spot and fix both?
-
-
 Built into the code, you'll find a few instances of the User Timing API
 (window.performance), which will be console.log()ing frame rate data into the
 browser console. To learn more about User Timing API, check out:
 http://www.html5rocks.com/en/tutorials/webperformance/usertiming/
-
 Creator:
 Cameron Pittman, Udacity Course Developer
 cameron *at* udacity *dot* com
@@ -449,11 +445,16 @@ var resizePizzas = function(size) {
   }
 
   // Iterates through pizza elements on the page and changes their widths
+
+
+
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+    var allContainer = document.querySelectorAll(".randomPizzaContainer"); //created this var to use in loop below to increase speed.
+
+    for (var i = 0; i < allContainer.length; i++) {
+      var dx = (determineDx(allContainer)[i], size);
+      var newwidth = (allContainer[i].offsetWidth + dx) + 'px';
+      allContainer[i].style.width = newwidth;
     }
   }
 
@@ -501,10 +502,11 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
+  var theTop = document.body.scrollTop;
   var items = document.querySelectorAll('.mover');
+
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = Math.sin((theTop / 1250) + (i % 5)); //pulled document.body.scrollTop out of the loop and assigned to var theTop to improve speed
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 

@@ -7,9 +7,9 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
-    <link href="css/print.css" rel="stylesheet" media="print">
+    <link href="css/print.css" rel="stylesheet" media="print"> <!--added media tag to stop this stylesheet from loading right away. -->
 
-    <script type="text/javascript">
+    <script type="text/javascript"> // removed the direct link to googlefont, using this js to load it instead.
     WebFontConfig = {
       google: { families: [ 'Open+Sans:400,700:latin' ] }
     };
@@ -24,7 +24,7 @@
     })(); 
     </script> 
 
-    <style type="text/css">
+    <style type="text/css"> /* inlined all css to eliminate the need to link to style.css */
     html {
       font-family: 'Open Sans', sans-serif;
       font-size: 100%;
@@ -89,7 +89,7 @@
 
   <body>
     <header>
-      <a href="/"><img src="img/profilepic.jpg"></a>
+      <a href="/"><img src="img/profilepic.jpg"></a> <!-- shrunk the size of this img -->
       <p>Cameron Pittman<br><span>Course Developer</span></p>
     </header>
 
@@ -119,7 +119,7 @@
           </li>
 
           <li>
-            <img style="width: 100px;" src="views/images/pizzeria.jpg">
+            <img style="width: 100px;" src="views/images/pizzeria.jpg"> <!-- "oh.my.god.becky.look at this size of this img" reduced img size -->
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>
@@ -129,6 +129,7 @@
     <footer>
       <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
     </footer>
+        <!-- moved both of these .js files to the bottom of the page and set them to async-->
         <script src="http://www.google-analytics.com/analytics.js" async></script>
         <script src="js/perfmatters.js" async></script>
   </body>

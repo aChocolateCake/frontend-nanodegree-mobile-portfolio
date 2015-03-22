@@ -1,3 +1,5 @@
+To run, open index.html. From here you can click on Cam's Pizzeria to get to the pizza.html page.
+
 Changes made:
 
 

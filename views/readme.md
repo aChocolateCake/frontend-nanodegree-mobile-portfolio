@@ -10,8 +10,8 @@ index.html
       shrunk img sizes of pizzeria.jpg and profilepic.jpg
       moved links to analytics.js and perfmatters.js to bottom of page and set both to sync
     
-pizza.html
-    changes made to pizza.html to increase fps to 60 or higher. These comments are also noted in pizza.html:
+pizza page
+    changes made to main.js to increase fps to 60 or higher. These comments are also noted in main.js:
     
       to increase speed I pulled this method calls out of their loops or function and assigned them to a var instead:
     
